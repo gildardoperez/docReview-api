@@ -3,7 +3,9 @@ class DoctorsController < ApplicationController
 
   # GET /doctors
   def index
-    @doctors = Doctor.all
+    # @doctors = Doctor.all
+    # get paginated current user doctors
+    @doctors = current_user.doctors.paginate(page: params[:page], per_page: 20)
     json_response(@doctors)
   end
 
