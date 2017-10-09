@@ -6,10 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# seed 50 records
-50.times do
-  doctor = Doctor.create(doctor_id: Faker::Number.number(5), group_id: Faker::Number.number(4), name: Faker::GameOfThrones.character, image: Faker::Avatar.image, address: Faker::Address.street_address, latitude: Faker::Address.latitude, longitude: Faker::Address.longitude )
-  rand(0..10).times do
-  	doctor.reviews.create(review_id: Faker::Number.number(4), rating: Faker::Number.between(1, 5), comment: Faker::MostInterestingManInTheWorld.quote )
-  end
+# seed 30 records
+30.times do
+	doctor = Doctor.create(doctor_id: Faker::Number.number(5), group_id: Faker::Number.number(4), name: Faker::GameOfThrones.character, image: Faker::Avatar.image, address: Faker::Address.street_address, latitude: Faker::Address.latitude, longitude: Faker::Address.longitude )
+		rand(0..10).times do
+			doctor.reviews.create(review_id: Faker::Number.number(4), rating: Faker::Number.between(1, 5), comment: Faker::MostInterestingManInTheWorld.quote )
+		end
 end
+
+# 5.times do
+# user = User.create(name: Faker::Name.first_name, email: Faker::Internet.email, password: "kuroko")
+# 	rand(0..10).times do
+# 		doctor.reviews.create(review_id: Faker::Number.number(4), rating: Faker::Number.between(1, 5), comment: Faker::MostInterestingManInTheWorld.quote )
+# 	end
+# end
