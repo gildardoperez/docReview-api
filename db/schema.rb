@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009051833) do
+ActiveRecord::Schema.define(version: 20171009062105) do
 
   create_table "doctors", force: :cascade do |t|
     t.integer  "doctor_id"
@@ -39,7 +39,9 @@ ActiveRecord::Schema.define(version: 20171009051833) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "visible",    default: false
+    t.integer  "user_id"
     t.index ["doctor_id"], name: "index_reviews_on_doctor_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "specialties", force: :cascade do |t|
