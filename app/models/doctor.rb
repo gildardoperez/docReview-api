@@ -1,6 +1,7 @@
 class Doctor < ApplicationRecord
 	# model association
-	has_many :reviews, dependent: :destroy
+	has_many :reviews
+	has_many :users, through: :reviews, dependent: :destroy
 
 	# validations
 	validates_presence_of :name, :address
