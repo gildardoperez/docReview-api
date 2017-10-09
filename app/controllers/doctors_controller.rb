@@ -9,6 +9,21 @@ class DoctorsController < ApplicationController
     json_response(@doctors)
   end
 
+  def recent
+    @doctor = Doctor.recent.order("created_at ASC").paginate(page: params[:page], per_page: 10)
+    json_response(@doctor.recent)
+  end
+
+  def active
+    @doctor = Doctor.active.order("created_at ASC").paginate(page: params[:page], per_page: 10)
+    json_response(@doctor.active)
+  end
+
+  def unanswered
+    @doctor = Doctor.unanswered.order("created_at ASC").paginate(page: params[:page], per_page: 10)
+    json_response(@doctor.unanswered)
+  end
+
   # POST /doctors
   def create
     @doctor = Doctor.create!(doctor_params)
@@ -36,7 +51,7 @@ class DoctorsController < ApplicationController
 
   def doctor_params
     # whitelist params
-    params.permit(:doctor_id, :group_id, :name, :image, :address, :latitude, :longitude)
+    params.permit(:doctor_id, :group_id, :name, :image, :address, :latitude, :longitude, :reviews_count)
   end
 
   def set_doctor

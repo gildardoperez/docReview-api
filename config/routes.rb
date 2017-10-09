@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   resources :doctors do
+  	collection do
+		get :recent
+		get :active
+		get :unanswered
+	end
     resources :reviews
   end  
 
