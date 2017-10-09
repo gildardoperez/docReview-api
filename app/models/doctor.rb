@@ -4,4 +4,5 @@ class Doctor < ApplicationRecord
 
 	# validations
 	validates_presence_of :name, :address
+	scope :visible, -> { where(visible: true) }
 end
