@@ -26,7 +26,6 @@ specialties
 - specialty_id
 - name
 
-Bonus Questions
 
 ## Installation
 
