@@ -1,5 +1,5 @@
 # Task
-We want to move over some of our site functionality to a service oriented architecture. To accomplish that we want to
+We want to move over some of our site functionality to a microservices architecture API gateway. To accomplish that we want to
 rewrite our “comment on your doctor” functionality into an HTTP service that will be used by users. Please create an API that will allow users to leave a comment and rate a doctor.
 
 We want to store at least the following:
