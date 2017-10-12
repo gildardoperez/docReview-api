@@ -1,24 +1,39 @@
-# README
+# Task
+We want to move over some of our site functionality to a service oriented architecture. To accomplish that we want to
+rewrite our “comment on your doctor” functionality into an HTTP service that will be used by users. Please create an API that will allow users to leave a comment and rate a doctor.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We want to store at least the following:
+- doctor_id
+- comment_body
+- created_at
+- rating
+- author_id
 
-Things you may want to cover:
+The database schema thus far is the following. Feel free to make any changes as you see fit.
+doctors:
+- doctor_id
+- group_id
+- name
+- address
+- latitude
+- longitude
 
-* Ruby version
+doctors_specialties:
+- doctor_id
+- specialty_id
 
-* System dependencies
+specialties
+- specialty_id
+- name
 
-* Configuration
+Bonus Questions
 
-* Database creation
+## Installation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* `git clone <repository-url>` this repository
+* change into the new directory
+* `> rvm use ruby-2.3.1`
+* `> bundle install`
+* `> rake db:migrate`
+* `> rake db:seed`
+* `> rails server`
